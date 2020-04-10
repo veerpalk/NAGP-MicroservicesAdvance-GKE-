@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:  properties-config-map
+  namespace: default
+data:
+  user.service.url: http://user-service-deployment-5wg7s
+  order.service.url: http://order-service-deployment-fdpl4
+
+
