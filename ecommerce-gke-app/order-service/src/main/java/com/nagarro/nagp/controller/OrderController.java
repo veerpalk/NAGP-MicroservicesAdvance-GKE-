@@ -24,7 +24,7 @@ public class OrderController {
 	private IOrderService orderService;
 	
 	@GetMapping("/{id}")
-	public List<Order> getOrder(@PathVariable("id") String userId) {
+	public List<Order> getOrder(@PathVariable("id") Integer userId) {
 		logger.info("getting order from OrderService of user "+userId);
 		return orderService.getOrderByUserId(userId);
 	}

@@ -17,7 +17,7 @@ public class OrderService implements IOrderService {
 	private OrderRepo orderRepo;
 
 	@Override
-	public List<Order> getOrderByUserId(String userId) {
+	public List<Order> getOrderByUserId(Integer userId) {
 		List<Order> orderList = orderRepo.getOrderByUserId(userId);
 		if(orderList.isEmpty())
 			throw new DataNotFoundException("No Order Found");

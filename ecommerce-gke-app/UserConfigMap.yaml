@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:  user-service-config-map
+  namespace: default
+data:
+  OPENTRACING_JAEGER_UDP_SENDER_HOST: jaeger-service-qvkhw
+  MYSQL_HOST: 35.238.149.65
+  MYSQL_USER: root
+

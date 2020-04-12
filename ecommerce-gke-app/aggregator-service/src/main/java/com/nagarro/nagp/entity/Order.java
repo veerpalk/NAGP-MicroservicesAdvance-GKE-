@@ -2,9 +2,12 @@ package com.nagarro.nagp.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Order {
 	private String orderId;
-	private String userId;
+	@JsonIgnore
+	private Integer userId;
 	private Double orderAmount;
 	private LocalDate createdDate;
 
@@ -12,7 +15,7 @@ public class Order {
 	
 	}
 
-	public Order(String orderId, String userId, Double orderAmount, LocalDate createdDate) {
+	public Order(String orderId, Integer userId, Double orderAmount, LocalDate createdDate) {
 		this.orderId = orderId;
 		this.userId = userId;
 		this.orderAmount = orderAmount;
@@ -27,11 +30,11 @@ public class Order {
 		this.orderId = orderId;
 	}
 
-	public String getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 

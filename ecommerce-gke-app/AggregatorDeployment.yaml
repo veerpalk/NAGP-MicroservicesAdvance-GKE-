@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "2"
-  creationTimestamp: "2020-03-31T04:50:11Z"
-  generation: 5
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2020-04-12T09:13:21Z"
+  generation: 10
   labels:
     app: aggregator-service
   name: aggregator-service
   namespace: default
-  resourceVersion: "206588"
+  resourceVersion: "329540"
   selfLink: /apis/apps/v1/namespaces/default/deployments/aggregator-service
-  uid: 1a4d11b1-730b-11ea-a9c0-42010a800099
+  uid: dadef7cf-7c9d-11ea-a8bf-42010a800230
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -35,14 +35,19 @@ spec:
         - name: USER_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              key: user.service.url
-              name: properties-config-map
+              key: USER_SERVICE_URL
+              name: aggregator-config-map
         - name: ORDER_SERVICE_URL
           valueFrom:
             configMapKeyRef:
-              key: order.service.url
-              name: properties-config-map
-        image: veerpalkaur/ecommerce-gke-app:aggregator-service
+              key: ORDER_SERVICE_URL
+              name: aggregator-config-map
+        - name: OPENTRACING_JAEGER_UDP_SENDER_HOST
+          valueFrom:
+            configMapKeyRef:
+              key: OPENTRACING_JAEGER_UDP_SENDER_HOST
+              name: aggregator-config-map
+        image: veerpalkaur/ecommerce-gke-app:nagp-aggregator-service
         imagePullPolicy: IfNotPresent
         name: ecommerce-gke-app-1
         resources: {}
@@ -56,19 +61,19 @@ spec:
 status:
   availableReplicas: 1
   conditions:
-  - lastTransitionTime: "2020-03-31T04:50:11Z"
-    lastUpdateTime: "2020-03-31T06:03:07Z"
-    message: ReplicaSet "aggregator-service-5c7c466c88" has successfully progressed.
+  - lastTransitionTime: "2020-04-12T09:13:21Z"
+    lastUpdateTime: "2020-04-12T09:13:24Z"
+    message: ReplicaSet "aggregator-service-7c8fc98798" has successfully progressed.
     reason: NewReplicaSetAvailable
     status: "True"
     type: Progressing
-  - lastTransitionTime: "2020-03-31T06:03:09Z"
-    lastUpdateTime: "2020-03-31T06:03:09Z"
+  - lastTransitionTime: "2020-04-12T09:33:18Z"
+    lastUpdateTime: "2020-04-12T09:33:18Z"
     message: Deployment has minimum availability.
     reason: MinimumReplicasAvailable
     status: "True"
     type: Available
-  observedGeneration: 5
+  observedGeneration: 10
   readyReplicas: 1
   replicas: 1
   updatedReplicas: 1

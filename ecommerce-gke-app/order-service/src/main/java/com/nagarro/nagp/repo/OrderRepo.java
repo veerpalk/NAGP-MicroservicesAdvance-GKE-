@@ -14,11 +14,11 @@ public class OrderRepo {
 	
 	List<Order> orders = new ArrayList<Order>() {{
 		
-		add(new Order("1","1",2000.00,LocalDate.of(2020, 02, 07)));
-		add(new Order("2","1",3000.00,LocalDate.of(2020, 03, 07)));
-		add(new Order("3","1",4000.00,LocalDate.of(2020, 03, 17)));
+		add(new Order("1",1,2000.00,LocalDate.of(2020, 02, 07)));
+		add(new Order("2",1,3000.00,LocalDate.of(2020, 03, 07)));
+		add(new Order("3",1,4000.00,LocalDate.of(2020, 03, 17)));
 		
-		add(new Order("1","2",1000.00,LocalDate.of(2020, 02, 07)));
+		add(new Order("1",2,1000.00,LocalDate.of(2020, 02, 07)));
 		
 	}};
 
@@ -32,7 +32,7 @@ public class OrderRepo {
 		return this.orders;
 	}
 	
-	public List<Order> getOrderByUserId(String userId) {
+	public List<Order> getOrderByUserId(Integer userId) {
 
 		return this.orders.stream().filter(order -> order.getUserId().equals(userId))
 				.collect(Collectors.toList());

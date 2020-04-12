@@ -26,7 +26,7 @@ public class OrderRestClient {
 	@Value("${order.service.url}")
 	public  String orderServiceUrl;
 
-	public List<Order> getUserOrder(String userId) {
+	public List<Order> getUserOrder(Integer userId) {
 		logger.info("calling order rest client with url"+ orderServiceUrl+"/order/"+ userId);	
 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(orderServiceUrl+"/order/"+ userId);

@@ -6,5 +6,8 @@ metadata:
 data:
   user.service.url: http://user-service-deployment-5wg7s
   order.service.url: http://order-service-deployment-fdpl4
+  opentracing.jaeger.udp-sender.host: http://35.232.118.172/
+
+
 
 

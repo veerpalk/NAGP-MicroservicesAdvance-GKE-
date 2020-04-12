@@ -18,4 +18,26 @@ spec:
         - name: user-service-container
           image: veerpalkaur/ecommerce-gke-app:user-service
           ports:
-          - containerPort: 9090
+            - containerPort: 9090
+          env:
+            - name: OPENTRACING_JAEGER_UDP_SENDER_HOST
+              valueFrom:
+               configMapKeyRef:
+                 name: order-service-config-map
+                 key: OPENTRACING_JAEGER_UDP_SENDER_HOST
+            - name: MYSQL_HOST
+              valueFrom: 
+                  configMapKeyRef:
+                    name: user-service-config-map
+                    key: MYSQL_HOST
+            - name: MYSQL_USER
+              valueFrom: 
+                  configMapKeyRef:
+                    name: user-service-config-map
+                    key: MYSQL_USER
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                  secretKeyRef:
+                    name: nagp-db-secret
+                    key: password
+

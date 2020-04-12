@@ -16,6 +16,13 @@ spec:
       spec:  
         containers:
         - name: order-service-container
-          image: veerpalkaur/ecommerce-gke-app:order-service
+          image: veerpalkaur/ecommerce-gke-app:nagp-order-service
           ports:
-          - containerPort: 9091
+            - containerPort: 9091
+          env:
+           - name: OPENTRACING_JAEGER_UDP_SENDER_HOST
+             valueFrom:
+               configMapKeyRef:
+                 name: order-service-config-map
+                 key: OPENTRACING_JAEGER_UDP_SENDER_HOST
+          

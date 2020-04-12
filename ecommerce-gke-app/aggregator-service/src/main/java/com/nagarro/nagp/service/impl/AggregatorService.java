@@ -15,14 +15,14 @@ public class AggregatorService implements IAggregatorService {
 	private UserRestClient userClient;
 	
 	@Autowired
-	private OrderRestClient orderClinet;
+	private OrderRestClient orderClient;
 	
 	@Override
-	public OrderDetailsDto getOrderDetails(String userId) {
+	public OrderDetailsDto getOrderDetails(Integer userId) {
 		
 		OrderDetailsDto orderDetailDto = new OrderDetailsDto();
 		orderDetailDto.setUser(userClient.getUser(userId));
-		orderDetailDto.setOrders(orderClinet.getUserOrder(userId));
+		orderDetailDto.setOrders(orderClient.getUserOrder(userId));
 		
 		return orderDetailDto;
 	}

@@ -4,6 +4,6 @@ import com.nagarro.nagp.entity.OrderDetailsDto;
 
 public interface IAggregatorService {
 
-	OrderDetailsDto getOrderDetails(String userId);
+	OrderDetailsDto getOrderDetails(Integer userId);
 
 }

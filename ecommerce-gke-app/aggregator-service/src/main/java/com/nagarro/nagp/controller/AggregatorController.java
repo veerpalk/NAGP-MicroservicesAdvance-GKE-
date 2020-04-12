@@ -30,7 +30,7 @@ public class AggregatorController {
 	}
 	
 	@GetMapping("orderdetails/{id}")
-	public OrderDetailsDto getOrderDetails(@PathVariable("id") String userId) {
+	public OrderDetailsDto getOrderDetails(@PathVariable("id") Integer userId) {
 		logger.info("Entered OrderDetails method of Aggregator Controller");
 		 return aggregatorService.getOrderDetails(userId);
 	}

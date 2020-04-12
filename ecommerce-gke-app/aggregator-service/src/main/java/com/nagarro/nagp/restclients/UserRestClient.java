@@ -25,7 +25,7 @@ public class UserRestClient {
 	public  String userServiceUrl;
 	
 
-	public User getUser(String userId) {
+	public User getUser(Integer userId) {
 		
 		logger.info("calling user resl client with url"+ userServiceUrl+"/user/"+userId);	
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(userServiceUrl+"/user/"+userId);

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:  aggregator-config-map
+  namespace: default
+data:
+  USER_SERVICE_URL: http://user-service-deployment-5wg7s
+  ORDER_SERVICE_URL: http://order-service-deployment-fdpl4
+  OPENTRACING_JAEGER_UDP_SENDER_HOST: jaeger-service-qvkhw
+
+
+
+

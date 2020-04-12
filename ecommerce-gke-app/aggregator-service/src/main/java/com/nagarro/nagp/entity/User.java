@@ -4,14 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class User {
 	@JsonIgnore
-	private String id;
+	private Integer id;
 	private String name;
 	private Integer age;
 	private String email;
 	
 	public User() {
 	}
-	public User(String id, String name, Integer age, String email) {
+	public User(Integer id, String name, Integer age, String email) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
@@ -20,10 +20,10 @@ public class User {
 	public String getName() {
 		return name;
 	}
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public void setName(String name) {

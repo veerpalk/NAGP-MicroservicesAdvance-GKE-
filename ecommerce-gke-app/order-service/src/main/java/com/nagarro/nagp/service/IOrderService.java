@@ -6,7 +6,7 @@ import com.nagarro.nagp.model.Order;
 
 public interface IOrderService {
 
-	List<Order> getOrderByUserId(String userId);
+	List<Order> getOrderByUserId(Integer userId);
 
 	List<Order> getAllOrders();
 
